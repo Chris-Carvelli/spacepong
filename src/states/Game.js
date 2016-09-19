@@ -61,7 +61,7 @@ BasicGame.Game.prototype = {
 
       this.p1.reset ();
       //this.p1.sprite.setController (new PlayerController (this.p1.sprite));
-      this.p1.sprite.setController (new AIController   (this.p1.sprite, this.ball));
+      this.p1.sprite.setController (new PlayerController   (this.p1.sprite));
       this.p2.reset ();
   		this.p2.sprite.setController (new AIController   (this.p2.sprite, this.ball));
 
