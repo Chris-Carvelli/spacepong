@@ -55,7 +55,6 @@ Ball = function (game, x, y, key, frame) {
 
 	game.add.existing (this);
 
-
 	this.gui = BasicGame.gui.addFolder('Ball');
 	this.gui.add (this, 'speed', 0, 2000).onFinishChange(function(value) {
 		this.object.body.velocity.x *= value / this.object._oldSpeed;
@@ -69,9 +68,6 @@ Ball.prototype = Object.create (Phaser.Sprite.prototype);
 Ball.prototype.constructor = Ball;
 
 Ball.prototype.update = function () {
-	//console.log (this.body.velocity.x / this.speed, this.body.velocity.y / this.speed);
-	//this.body.velocity.x = this.speed * Math.acos (this.body.velocity.x / this.speed);
-	//this.body.velocity.y = this.speed * Math.asin (this.body.velocity.y / this.speed);
 	for (var i in this.collidingObjects) {
 		var obj, handler, ctx;
 		[obj, handler, ctx] = this.collidingObjects[i];
