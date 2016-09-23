@@ -6,6 +6,7 @@
 	
 	<script src="lib/phaser.js"></script>
 	<script src="lib/dat.gui.js"></script>
+
 	<script src="src/states/Boot.js"></script>
 	<script src="src/states/Preloader.js"></script>
 	<script src="src/states/MainMenu.js"></script>
@@ -19,8 +20,10 @@
 <div id="gameContainer"></div>
 
 <script type="text/javascript">
-
+	(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})()
 	window.onload = function() {
+		//stats.js
+		
 		//debug GUI to tween properties run-time
 		BasicGame.gui = new dat.GUI();
 		//	Create your Phaser game and inject it into the gameContainer div.

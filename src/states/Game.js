@@ -13,7 +13,8 @@ BasicGame.Player = function (game, name, id, startX, startY, health) {
 
 	this.offset = id % 2 == 0 ? -30 : 30;
 
-  this.healthLbl = game.add.text (startX + this.offset, 20, this.health);
+  this.healthLbl = game.add.text (startX + this.offset, 20, this.health,
+  	{ font: "32px Arial", fill: 'white' });
   this.healthLbl.anchor = {x: 0.5, y: 0.5};
 
 	this.sprite =  new PgSprite (game, startX + this.offset, startY, 'pg' + id);
@@ -53,7 +54,7 @@ BasicGame.Game = function (game) {
 
 BasicGame.Game.prototype = {
   create: function () {
-    this.stage.backgroundColor = '#554c9c';
+    this.stage.backgroundColor = '#455562';
 
   	this.btnStart = this.add.button (this.world.width/2, 600, 'btnStart', function () {
       this.ball.x = this.world.width / 2;
